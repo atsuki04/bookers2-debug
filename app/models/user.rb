@@ -16,16 +16,16 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
   validates :introduction, 
                    length: { maximum: 50 }
-end
-
-def follow(user_id)
+                   
+  def follow(user_id)
   relationships.create(followed_id: user_id)
-end
+  end
 
-def unfollow(user_id)
+  def unfollow(user_id)
   relationships.find_by(followed_id: user_id).destroy
-end
+  end
 
-def following?(user)
+  def following?(user)
   followings.include?(user)
+  end                 
 end
