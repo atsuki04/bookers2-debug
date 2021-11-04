@@ -23,3 +23,7 @@
     </div>
   </nav>
 </header>
+
+<% if user_signed_in? %>
+  <%= render 'searchs/form', class: "center-block" %>
+<% end %>
