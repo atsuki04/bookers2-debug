@@ -1,5 +1,5 @@
-class GroupsController < 
-  before_action :set_group, only: [:edit, :update]
+class GroupsController < ApplicationController
+  #before_action :set_group, only: [:edit, :update]
   
   def new
     @group = Group.new
