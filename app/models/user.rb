@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   has_many :followers, through: :reverse_of_relationships, source: :follower
   has_many :goup_users
-  has_many :groups, through: :group_user
+  has_many :groups, through: :group_users
   attachment :profile_image, destroy: false
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
